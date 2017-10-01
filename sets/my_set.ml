@@ -1,0 +1,13 @@
+module SS = Set.Make(String);;
+let print_set s = SS.iter print_endline s; print_endline "---------";;
+let s1 = SS.empty;;
+print_set s1;;
+let s1 = SS.singleton "hello";;
+print_set s1;;
+let s1 = List.fold_right SS.add ["hello"; "community"; "manager"; "blue"; "green"] SS.empty;;
+print_set s1;;
+let my_filter s = String.length s <= 5;;
+let s2 = SS.filter my_filter s1;;
+print_set s2;;
+let s3 = SS.diff s1 s2;;
+print_set s3;;
